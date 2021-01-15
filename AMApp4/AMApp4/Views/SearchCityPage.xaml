@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AMApp4.Views.SearchCityPage"
+             BackgroundImage="bg.png">
+    <NavigationPage.TitleView>
+        <StackLayout>
+            <Label Text="Searching another location" TextColor="White" HorizontalTextAlignment="Center" FontSize="22" Padding="0,0,75,0"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <StackLayout Padding="15" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Entry x:Name="city" Placeholder="Write the city you want to see the weather of" PlaceholderColor="White" TextColor="White" />
+        <Button Text="Search" HorizontalOptions="Center" Clicked="SearchCity" TextTransform="None"/>
+        <Grid x:Name="gridLayout" Padding="15"></Grid>
+    </StackLayout>
+</ContentPage>

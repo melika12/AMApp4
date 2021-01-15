@@ -9,12 +9,15 @@ namespace AMApp4.Helper
 {
     public class ApiCaller
     {
-        public static async Task<ApiResponse> Get(string url, string authId = null)
+        public static async Task<ApiResponse> Get(string url, string apikey = null, string host = null)
         {
             using (var client = new HttpClient())
             {
-                if (!string.IsNullOrWhiteSpace(authId))
-                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", authId);
+                if (!string.IsNullOrWhiteSpace(apikey) && !string.IsNullOrWhiteSpace(host))
+                {
+                    client.DefaultRequestHeaders.Add("x-rapidapi-key", apikey);
+                    client.DefaultRequestHeaders.Add("x-rapidapi-host", host);
+                }
 
                 var request = await client.GetAsync(url);
                 if (request.IsSuccessStatusCode)

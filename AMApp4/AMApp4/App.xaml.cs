@@ -11,7 +11,7 @@ namespace AMApp4
         {
             InitializeComponent();
 
-            MainPage = new CurrentAMPage();
+            MainPage = new NavigationPage(new CurrentAMPage());
         }
 
         protected override void OnStart()
